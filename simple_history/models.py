@@ -177,7 +177,7 @@ class HistoricalRecords(object):
                 # case where object has a foreign key to itself. In this case
                 # we need to set the `model` value of the field to a model. We
                 # can use the old_field.model value.
-                if isinstance(old_field.remote_field.model, str) and \
+                if isinstance(old_field.remote_field.model, six.string_types) and \
                    old_field.remote_field.model == 'self':
                     object_to = old_field.model
                 else:
